@@ -10,7 +10,14 @@ for bucket in s3_resource.buckets.all():
 # バケット内のすべてのオブジェクトを取得
 bucket = s3_resource.Bucket(const.BUKKET_NAME)
 for object in bucket.objects.all():
-    print(object)
+    # print(object)
+    print(object.key)
+
+print()
+
+# 条件を付けてオブジェクトを取得
+for object in bucket.objects.filter(Prefix=const.CREATE_DIR):
+    print(object.key)
 
 # ファイルをダウンロードする
 s3_resource.Object(const.BUKKET_NAME, 'sample1.txt').download_file(const.DOWNLOAD_DIR)

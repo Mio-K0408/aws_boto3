@@ -1,1 +1,4 @@
 /checkboto3/secret
+/upload*
+!/uoload/sample4.txt
+!/uoload/sample4.txt
